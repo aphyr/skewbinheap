@@ -1,0 +1,12 @@
+#!/usr/bin/env escript
+
+test() ->
+  binheap_eqc:test_new(),
+  binheap_eqc:test_min().
+
+main(_) ->
+  compile:file(bintree),
+  compile:file(binheap),
+  compile:file(binheap_eqc),
+
+  test().
