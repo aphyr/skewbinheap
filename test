@@ -1,12 +1,23 @@
 #!/usr/bin/env escript
 
-test() ->
-  binheap_eqc:test_new(),
-  binheap_eqc:test_min().
+test(N) ->
+  skewbinheap_eqc:test_min(N) and
+  skewbinheap_eqc:test_sort(N) and
+  skewbinheap_eqc:test_merge(N).
 
-main(_) ->
-  compile:file(bintree),
-  compile:file(binheap),
-  compile:file(binheap_eqc),
+main([String]) ->
+  N = try
+    list_to_integer(String)
+  catch
+    _:_ -> usage()
+  end,
 
-  test().
+  compile:file(skewbinheap),
+  compile:file(skewbinheap_eqc),
+
+  test(N);
+main(_) -> main(["100"]).
+
+usage() ->
+  io:format("usage: test [iterations]\n"),
+  halt(1).
