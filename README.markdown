@@ -25,6 +25,11 @@ Example
     > skewbinheap:delete_min(H1).                             
     [{0,3,[],[]},{1,2,[],[{0,4,[],[]}]}]
 
+    > H2 = skewbinheap:insert_all([100,101], skewbinheap:new()).
+    [{0,101,[],[]},{0,100,[],[]}]
+
+    > skewbinheap:merge(H1, H2)
+    [{0,5,[],[]},{2,1,[4],[{1,100,[],[{0,101,[],[]}]},{0,2,[],[]}]}]
 TODO
 --
   
