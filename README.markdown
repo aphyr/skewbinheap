@@ -1,4 +1,5 @@
-== Skew Binomial Heaps
+Skew Binomial Heaps
+==
 
 Skew Binomial Heaps offer amortized:
 
@@ -9,7 +10,8 @@ Skew Binomial Heaps offer amortized:
 
 This implementation is straight from Okasaki's PFDS.
 
-== Example
+Example
+==
 
     > Heap = skewbinheap:new().
     []
@@ -23,6 +25,7 @@ This implementation is straight from Okasaki's PFDS.
     > skewbinheap:delete_min(H1).                             
     [{0,3,[],[]},{1,2,[],[{0,4,[],[]}]}]
 
-== TODO
+TODO
+==
   
   - Add a custom comparator function
