@@ -17,13 +17,13 @@ Example
     []
 
     > H1 = skewbinheap:insert_all([2,1,4,5], Heap).
-    [{0,4,[],[]},{1,1,[3],[{0,2,[],[]}]}]
+    [{0,5,[],[]},{1,1,[4],[{0,2,[],[]}]}]
 
     > skewbinheap:min(H1)
     1
 
-    > skewbinheap:delete_min(H1).                             
-    [{0,3,[],[]},{1,2,[],[{0,4,[],[]}]}]
+    > skewbinheap:delete_min(H1).
+    [{0,4,[],[]},{1,2,[],[{0,5,[],[]}]}] 
 
     > H2 = skewbinheap:insert_all([100,101], skewbinheap:new()).
     [{0,101,[],[]},{0,100,[],[]}]
